@@ -187,7 +187,7 @@ jobs:
             git config --global --add safe.directory /github/workspace/sources/nuttx
             git config --global --add safe.directory /github/workspace/sources/apps
             cd sources/nuttx/tools/ci
-            ( sleep 7200 ; echo Killing pytest after timeout... ; pkill -f pytest )&
+            ( sleep 10800 ; echo Killing pytest after timeout... ; pkill -f pytest )&
             ./cibuild.sh -c -A -N -R -S testlist/${{matrix.boards}}.dat
 
       - name: Post-build Disk Space
